@@ -12,39 +12,49 @@ import { Enrollment } from '../../enrollments/entities/enrollment.entity';
 @Entity('students')
 export class Student {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  firstName: string;
+  firstName!: string;
 
   @Column()
-  lastName: string;
+  lastName!: string;
 
   @Column({
     nullable: true,
   })
-  phone: string;
+  phone!: string;
 
   @Column({
     nullable: true,
   })
-  email: string;
+  email!: string;
 
   @Column({
     nullable: true,
   })
-  emergencyContact: string;
+  address!: string;
+
+  @Column({
+    nullable: true,
+  })
+  dateOfBirth!: Date;
+
+  @Column({
+    nullable: true,
+  })
+  emergencyContact!: string;
 
   @Column({
     default: true,
   })
-  active: boolean;
+  active!: boolean;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt!: Date;
 
   @OneToMany(() => Enrollment, (enrollment) => enrollment.student)
   enrollments: Enrollment[];
