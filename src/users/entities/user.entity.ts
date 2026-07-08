@@ -12,35 +12,35 @@ import { UserRole } from '../../common/enums/user-role.enum';
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({
     length: 100,
   })
-  name: string;
+  name!: string;
 
   @Column({
     unique: true,
   })
-  email: string;
+  email!: string;
 
   @Column({
     select: false,
   })
-  password: string;
+  password!: string;
 
   @Column({
     type: 'enum',
     enum: UserRole,
   })
-  role: UserRole;
+  role!: UserRole;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt!: Date;
 
   @OneToMany(() => Class, (classEntity) => classEntity.instructor)
-  classes: Class[];
+  classes!: Class[];
 }

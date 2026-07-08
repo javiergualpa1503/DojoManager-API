@@ -1,0 +1,13 @@
+### Obtener todos los estudiantes
+GET http://localhost:3000/students   
+
+### Crear un nuevo estudiante
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+    "firstName": "Ismael",
+    "lastName": "Cuichan",
+    "phone": "09778444",
+    "email": "Ismael@example.com"
+}
